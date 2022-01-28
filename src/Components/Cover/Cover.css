@@ -1,0 +1,27 @@
+.caption {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.carousel-img {
+  width: 100%;
+  object-fit: cover;
+  height: calc(100vh - 60px);
+}
+
+.cover-title {
+  font-size: 75px;
+  font-weight: 700;
+  color: white;
+}
+
+.cover-para {
+  font-size: 50px;
+  font-weight: bold;
+}
