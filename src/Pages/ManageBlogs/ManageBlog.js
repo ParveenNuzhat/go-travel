@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 
 const ManageBlog = (props) => {
+  console.log(props);
   let starNumber = 0;
   const {
     _id,
@@ -19,9 +20,9 @@ const ManageBlog = (props) => {
     rating,
   } = props.blog;
   const { user } = useAuth();
-  const { handleConfirm } = props;
-  const { handleDelete } = props;
-  console.log(props.handleConfirm);
+  // const { handleConfirm } = props;
+  // const { handleDelete } = props;
+  // console.log(props.handleConfirm);
   return (
     <div>
       <div className=" mb-5 ms-3 me-3 mt-4 ">
@@ -100,7 +101,7 @@ const ManageBlog = (props) => {
               <div>
                 {status === "pending" && (
                   <button
-                    onClick={() => handleConfirm(_id)}
+                    onClick={() => props.handleConfirm(_id)}
                     className="btn"
                     style={{ backgroundColor: "indigo", color: "white" }}
                   >
@@ -128,7 +129,7 @@ const ManageBlog = (props) => {
                 </div>
                 <div>
                   <button
-                    onClick={() => handleDelete(_id)}
+                    onClick={() => props.handleDelete(_id)}
                     className="btn"
                     style={{ backgroundColor: "darkred", color: "white" }}
                   >

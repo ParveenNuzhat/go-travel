@@ -1,14 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hook/useAuth";
-import "./UserBlog.css";
 
-const UserBlog = () => {
+const AdminBlog = () => {
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://quiet-waters-33050.herokuapp.com/blogs", {
+    fetch("https://quiet-waters-33050.herokuapp.com/adminBlogs", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -73,4 +72,4 @@ const UserBlog = () => {
   );
 };
 
-export default UserBlog;
+export default AdminBlog;

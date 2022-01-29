@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     fetch(`https://quiet-waters-33050.herokuapp.com/users`, {
@@ -15,6 +15,7 @@ const MakeAdmin = () => {
       .then((data) => {
         if (data) {
           alert("New admin has been added");
+          reset();
         }
       });
     console.log(data);

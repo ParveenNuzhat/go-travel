@@ -13,6 +13,8 @@ import Register from "./Pages/Register/Register";
 import UserBlog from "./Pages/AddUserBlog/UserBlog";
 import MakeAdmin from "./Pages/MakeAdmin/MakeAdmin";
 import ManageBlogs from "./Pages/ManageBlogs/ManageBlogs";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import AdminBlog from "./Pages/AdminBlog/AdminBlog";
 
 function App() {
   return (
@@ -32,11 +34,14 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/blogDetails/:blogId">
+          <PrivateRoute path="/blogDetails/:blogId">
             <Details></Details>
-          </Route>
-          <Route path="/userBlog">
+          </PrivateRoute>
+          <PrivateRoute path="/userBlog">
             <UserBlog></UserBlog>
+          </PrivateRoute>
+          <Route path="/adminBlog">
+            <AdminBlog></AdminBlog>
           </Route>
           <Route path="/manageBlogs">
             <ManageBlogs></ManageBlogs>

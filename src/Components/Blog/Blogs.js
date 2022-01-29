@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Row } from "react-bootstrap";
 import Blog from "./Blog";
 import "./Blogs.css";
 
@@ -36,7 +37,7 @@ const Blogs = () => {
 
   return (
     <div>
-      <h3>Blog Post</h3>
+      <h3 className=" mt-5 text-center">Blog Post</h3>
       <select onChange={handleChangePageSize}>
         <option value={5}>5</option>
         <option selected value={10}>
@@ -44,11 +45,14 @@ const Blogs = () => {
         </option>
         <option value={15}>15</option>
       </select>
-      <div>
-        {currentBlogs.map((blog) => (
-          <Blog key={blog._id} blog={blog}></Blog>
-        ))}
+      <div className="container">
+        <Row md={3} className="g-4">
+          {currentBlogs.map((blog) => (
+            <Blog key={blog._id} blog={blog}></Blog>
+          ))}
+        </Row>
       </div>
+
       <div className="blogs-pagination">
         <div className="pagination-buttons">
           {pageIndex.map((index) => (
